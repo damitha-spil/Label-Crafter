@@ -12,7 +12,7 @@ export default function DataFieldsPanel() {
   const fields = fieldCatalog?.length ? fieldCatalog : catalogForClient(client)
 
   return (
-    <div className="border-b border-[var(--lc-panel-border)] px-3 py-2">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden border-b border-[var(--lc-panel-border)] px-3 py-2">
       <div className="mb-1 flex items-center justify-between gap-2">
         <SectionLabel>Data fields</SectionLabel>
         <div className="flex gap-1">
@@ -31,10 +31,10 @@ export default function DataFieldsPanel() {
           ))}
         </div>
       </div>
-      <p className="mb-2 text-[10px] leading-snug text-[var(--lc-text-muted)]">
-        Click to place an Opti header bound to that key. Use Configure Data Mapping on the field for noteN.fieldM, same as the Labels designer.
+      <p className="mb-1.5 truncate text-[10px] text-[var(--lc-text-muted)]" title="Click to place a bound field. Use Configure Data Mapping for noteN.fieldM.">
+        Click a field to place it on the label
       </p>
-      <div className="max-h-40 space-y-1 overflow-auto pr-1">
+      <div className="lc-data-fields-list min-h-0 flex-1 space-y-1 overflow-auto pr-1">
         {fields.map((field) => (
           <button
             key={field.key}

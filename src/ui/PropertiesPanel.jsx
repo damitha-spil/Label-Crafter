@@ -54,7 +54,7 @@ export default function PropertiesPanel() {
 
   if (!field) {
     return (
-      <aside className="lc-sidebar lc-sidebar-right flex w-[280px] shrink-0 flex-col border-l border-[var(--lc-panel-border)] bg-[var(--lc-panel)]">
+      <aside className="lc-sidebar lc-sidebar-right flex w-[280px] min-h-0 shrink-0 flex-col overflow-hidden border-l border-[var(--lc-panel-border)] bg-[var(--lc-panel)]">
         <PanelHeader title="Properties" />
         <EmptyState
           icon={MousePointer2}
@@ -75,7 +75,7 @@ export default function PropertiesPanel() {
   const mapHint = mappingLabel(field)
 
   return (
-    <aside className="lc-sidebar lc-sidebar-right flex w-[280px] shrink-0 flex-col border-l border-[var(--lc-panel-border)] bg-[var(--lc-panel)]">
+    <aside className="lc-sidebar lc-sidebar-right flex w-[280px] min-h-0 shrink-0 flex-col overflow-hidden border-l border-[var(--lc-panel-border)] bg-[var(--lc-panel)]">
       {mappingOpen ? (
         <MappingDialog
           field={field}
